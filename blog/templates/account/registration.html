@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body class="alert-dark">
+ 
+    <div class="container">
+        <div>
+            {% if messages %}
+                <ul class="message">
+                    {% for message in messages %}
+                    <li>
+                        <div class="alert alert-success alert-dismissible">
+                            <p>{{message}}</p>
+    
+                        </div>
+                    </li>
+                    {%endfor%}
+                </ul>
+            {% endif %}
+        </div>
+        <h1 class="text-center text-secondry">Sign Up</h1>
+        <div class="row">
+            <div class="col-md-8 bg-info mx-auto" style="width:200px;">
+                    <form action="" method="POST" class="form-group">
+                            {% csrf_token %}
+                            {{reg_form.as_p}}
+                        <button class="btn btn-dark" type="submit">submit</button>
+                        </form>
+
+            </div>
+               
+        </div>
+            
+
+    </div>
+    
+</body>
+</html>

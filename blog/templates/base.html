@@ -1,0 +1,89 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{% static "css/blog.css" %}">
+    <link rel="stylesheet" href="{% static "css/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "css/css/bootstrap-grid.min" %}">
+
+
+    <link  rel="stylesheet href="https://fonts.googleapis.com/css?family=Josefin+Sans" >
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="{% static "js/effect.js" %}"></script>
+
+
+
+
+   <script defer src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  </head>
+  <body style="background-color:#ccd9ff;">
+  <div class="row bg-info fixed-top">
+    <div class="col-md-2 bg-white">
+      <a class="navbar-brand d-inline" href="{% url "blog:post_list"%}">
+       <span class="font-weight-bold">BLOGSNEPAL</span><i class="fas fa-pen-square ml-1"></i>
+      </a>
+    </div>
+    <div class="col-md-8 bg-light" style="padding-left:52%">
+        <a class="btn btn-info" href="{% url "account:login" %}" >Sign In</a>
+        <a class="btn btn-info" href="{% url "account:registartion" %}">Sign Up</a>
+    </div>
+    <div class="col-md-2 bg-light">
+      <p>This is div<p>
+
+    </div>
+
+  </div>
+
+
+
+<div class="row mt-5">
+      <div class="col-md-2 bg-light" style="position:fixed">
+        <nav class="navbar navbar-collapse">
+
+              <ul class="navbar-nav">
+                <li class="nav-item ">
+                    <a class="nav-link" href="#">Blog</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Read Later<span class="badge badge-light ml-3 d-inline">30</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url "blog:profile" %}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Categories</a>
+                </li>
+              </ul>
+
+        </nav>
+        <hr class="bg-info"/>
+
+      </div>
+
+      <div class="col-md-8" style="position:absolute;left:16%">
+
+
+            {% block content%}
+
+
+            {% endblock %}
+
+      </div>
+
+      <div class="col-md-2 bg-danger" style="position:absolute;right:0%">
+          <div class="fixed-bottom float-right " style="left:84.08%">
+                <a class="btn btn-primary w-100">Chat</a>
+          </div>
+      </div>
+
+  </div>
+
+
+  </body>
+</html>

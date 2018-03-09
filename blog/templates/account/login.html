@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Login</title>
+</head>
+<body class="alert-dark">
+    <div class="container">
+        <div class="row bg-info">
+            <p class="text-center text-secondary">Log In</p>
+            <div>
+                    {% if messages %}
+                        <ul class="message">
+                            {% for message in messages %}
+                            <li>
+                                <div class="alert alert-success alert-dismissible">
+                                    <p>{{message}}</p>
+            
+                                </div>
+                            </li>
+                            {%endfor%}
+                        </ul>
+                    {% endif %}
+                </div>
+            <form action="" class="form-group" method="POST">
+                {% csrf_token%}
+                {{log_form.as_p}}
+                <button class="btn btn-primary" type="submit">
+                        LogIn
+                </button>
+            </form>
+
+
+        </div>
+    </div>
+</body>
+</html>

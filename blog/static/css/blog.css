@@ -1,0 +1,13 @@
+.font{
+  font-family: 'Monda', sans-serif;
+}
+.backcolor{
+background-color:blue;
+}
+#c{
+  size:50px;
+}
+
+body {
+  background: white url("write.jpg") no-repeat;
+}

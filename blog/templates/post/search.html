@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block content%}
+<nav class="navbar navbar-light bg-light">
+  <form class="form-inline" action="/search" method="post">
+    {% csrf_token %}
+    <input class="form-control mr-sm-2" id="size c" type="search" name="search" placeholder="Search" aria-label="Search" size=50%>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+  <a class="btn btn-primary">Sign In</a>
+  <a class="btn btn-primary">Register</a>
+</nav>
+</div>
+{% endblock%}
